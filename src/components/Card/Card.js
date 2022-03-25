@@ -1,5 +1,6 @@
 import React from 'react';
 import './Card.css'
+import { FiShoppingCart } from 'react-icons/fi';
 
 // Card componet for display product information
 const Card = ({gun}) => {
@@ -16,7 +17,7 @@ const Card = ({gun}) => {
                 <p>Action: {action}</p>
             </div>
             <div className='add-to-cart'>
-                <button>Add to Cart</button>
+                <button className='icon'><FiShoppingCart/></button>
                 <h1>Price: ${price}</h1>
             </div>
         </div>
