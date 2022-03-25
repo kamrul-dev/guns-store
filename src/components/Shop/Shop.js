@@ -6,6 +6,13 @@ import './Shop.css'
 // Data load on Shop conponent
 const Shop = () => {
     const [guns, setGuns] = useState([]);
+    const [cart, setCart] = useState([]);
+
+    const handleAddToCart = (gun) => {
+        const newCart = [...cart, gun];
+        setCart(newCart);
+    }
+
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
@@ -13,12 +20,13 @@ const Shop = () => {
     }, []);
     return (
         <div>
-            <Navbar></Navbar>
+            <Navbar cart={cart}></Navbar>
             <div className="card-container">
                 {
                     guns.map(gun => <Card
                         key={gun.id}
                         gun={gun}
+                        handleAddToCart={handleAddToCart}
                     />)
                 }
             </div>

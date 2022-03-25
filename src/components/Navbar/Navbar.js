@@ -1,7 +1,8 @@
 import React from 'react';
 import './Navbar.css';
 import { FiShoppingCart } from 'react-icons/fi';
-const Navbar = () => {
+const Navbar = ({cart}) => {
+    console.log('nav',cart);
     return (
         <div className='navbar'>
             <h1>Guns Store</h1>
